@@ -57,10 +57,6 @@ describe('WeatherSearchComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  /*it('should have called `getHero`', () => {
-    expect(weatherSpy.getWeather.calls.count()).toBe(1, 'getWeather called once');
-  });*/
-
   it('should call getWeather when search clicked', () => {
     component.cityName = 'London,gb';
     fixture.detectChanges();
