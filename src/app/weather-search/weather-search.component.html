@@ -1,0 +1,18 @@
+<p-growl life="5000" [(value)]="msgs"></p-growl>
+<div class="ui-g ui-fluid">
+  <div class="ui-g-12 ui-md-4">
+  </div>
+  <div class="ui-g-12 ui-md-4">
+    <div class="ui-inputgroup">
+      <input type="text" pInputText [(ngModel)]="cityName" placeholder="Enter city name and country code like 'London,gb'">
+      <button id="btnSearch" pButton type="button" (click)="searchForCity($event)" icon="fa-search" class="ui-button-primary"></button>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<p-dataTable [value]="forcastData" [responsive]="true" [immutable]="false" selectionMode="single" [emptyMessage]="emptyTableMsg">
+  <p-column header="Id" field="cityId" [hidden]="true"></p-column>
+  <p-column header="City" field="city" [sortable]="true" [filter]="true" filterPlaceholder="Search"></p-column>
+  <p-column *ngFor="let col of columns" [header]="col.header" [field]="col.field"></p-column>
+</p-dataTable>
